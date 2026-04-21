@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-sm: calc(var(--radius) * 0.6);
+}
+
+:root {
+  --background: #d4ad84;
+  --foreground: #2d241d;
+  --card: #d4ad84;
+  --card-foreground: #2d241d;
+  --popover: #d4ad84;
+  --popover-foreground: #2d241d;
+  --primary: #2d241d;
+  --primary-foreground: #d4ad84;
+  --secondary: rgba(0,0,0,0.05);
+  --secondary-foreground: #2d241d;
+  --muted: rgba(0,0,0,0.05);
+  --muted-foreground: rgba(45, 36, 29, 0.6);
+  --accent: rgba(0,0,0,0.05);
+  --accent-foreground: #2d241d;
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: #fdfdfd;
+  --border: rgba(45, 36, 29, 0.15);
+  --input: rgba(45, 36, 29, 0.15);
+  --ring: #2d241d;
+  --radius: 0.5rem;
+}
+
+
+@layer base {
+  * {
+    @apply border-foreground/10;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.studio-grid {
+  background-image: linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 6.25rem 6.25rem;
+}
+
+.cell {
+  @apply border-t border-l border-foreground/10 p-6 md:p-10;
+}
+
+.cell-br {
+  @apply border-b border-r border-foreground/10;
+}
+
