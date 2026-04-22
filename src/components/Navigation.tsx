@@ -7,8 +7,8 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-sm border-b border-foreground/10">
       <div className="flex items-center justify-between px-6 md:px-10 h-20">
-        <Link to="/" className="font-sans font-bold text-xl tracking-tighter uppercase shrink-0">
-          måns<span className="opacity-30">.</span>verkstad
+        <Link to="/" className="font-sans font-bold text-xl tracking-tighter shrink-0">
+          mbw.<span className="tracking-widest">ERKSTAD</span>
         </Link>
 
         <div className="flex items-center gap-8 md:gap-12">

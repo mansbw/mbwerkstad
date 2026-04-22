@@ -42,9 +42,9 @@ export default function Contact() {
   }, [x]);
 
   return (
-    <div className="min-h-screen pt-12 lg:pt-32 pb-20">
-      <div className="px-6 md:px-12 flex items-center mb-12 lg:mb-32">
-        <div className="max-w-6xl mx-auto flex flex-col lg:grid lg:grid-cols-2 lg:gap-x-20 gap-y-12 items-start">
+    <div className="min-h-screen pt-28 lg:pt-32 pb-20">
+      <div className="px-6 md:px-12 mb-6 lg:mb-32">
+        <div className="max-w-6xl mx-auto flex flex-col lg:grid lg:grid-cols-2 lg:gap-x-20 gap-y-12">
           {/* Left Column Container */}
           <div className="order-1 lg:col-start-1 flex flex-col h-full w-full">
             <motion.div
@@ -52,11 +52,11 @@ export default function Contact() {
               animate={{ opacity: 1, x: 0 }}
               className="lg:mb-0"
             >
-              <h1 className="font-sans text-xl md:text-5xl font-bold tracking-tight uppercase mb-4">Börja Ditt Projekt</h1>
+              <h1 className="font-sans text-xl md:text-5xl font-bold tracking-tight uppercase mb-4">Få ett prisförslag på ditt projekt</h1>
               
               <div className="mb-6 lg:mb-24">
                 <p className="text-lg opacity-70 leading-relaxed max-w-sm">
-                  låt oss bygga nåt fint
+                  Jag vill göra det svåra enkelt. Berätta vad du behöver, så ritar, bygger och monterar jag din nya favoritplats. Inget projekt är för litet, och inget för stort. Platsbyggda möbler eller unika objekt - utan krångel.
                 </p>
               </div>
             </motion.div>
@@ -92,9 +92,9 @@ export default function Contact() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="order-2 lg:order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2 bg-background p-8 md:p-12 border border-foreground/10 rounded-2xl w-full lg:mt-0"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="order-2 lg:order-2 lg:col-start-2 lg:row-start-1 lg:row-span-2 bg-background px-6 py-10 md:p-12 border border-foreground/10 rounded-2xl w-full lg:mt-0"
           >
             <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -132,9 +132,10 @@ export default function Contact() {
                 <Label htmlFor="budget" className="font-mono text-[10px] uppercase tracking-widest ml-4">Budget</Label>
                 <Select>
                   <SelectTrigger className="border-0 border-b border-foreground/10 rounded-xl px-4 py-8 text-lg focus:ring-0 focus:border-foreground shadow-none hover:bg-foreground/[0.03] transition-colors bg-transparent h-auto">
-                    <SelectValue placeholder="Välj ett förslag" />
+                    <SelectValue placeholder="$$$" />
                   </SelectTrigger>
                   <SelectContent className="rounded-xl border-foreground/10 bg-[#e0c09d]">
+                      <SelectItem value="$$$">$$$:-</SelectItem>
                     <SelectItem value="0-5k">Under 5 000:-</SelectItem>
                     <SelectItem value="5-10k">5 000 - 10 000:-</SelectItem>
                     <SelectItem value="10-20k">10 000 - 20 000:-</SelectItem>
